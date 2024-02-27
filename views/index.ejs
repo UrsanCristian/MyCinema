@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anta&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
     <title>MyCinema</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header id="hero">
+    <div class="hero-container">
+      <div class="title">
+        <h1 class="title-text">Welcome to MyCinema</h1>
+        <h4 class="author">Cristian's Movies/Series Notes</h4>
+      </div>
+    </div>
+    <form id="selector-form" action="/type" method="post">
+        <button class="btn s-btn" type="submit" name="selector" value="movies">
+          Movies
+        </button>
+        <button class="btn s-btn" type="submit" name="selector" value="series">
+          Series
+        </button>
+      </form>
+    </header>
+    <section id="top-list">
+
+        <h2 class="sub-title">My Favourites</h2>
+        <div class="container">
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMjUyNTA3MTAyM15BMl5BanBnXkFtZTgwOTEyMTkyMjE@._V1_SX300.jpg" alt="The Maze Runner">
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMjUyNTA3MTAyM15BMl5BanBnXkFtZTgwOTEyMTkyMjE@._V1_SX300.jpg" alt="The Maze Runner">
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMjUyNTA3MTAyM15BMl5BanBnXkFtZTgwOTEyMTkyMjE@._V1_SX300.jpg" alt="The Maze Runner">
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMjUyNTA3MTAyM15BMl5BanBnXkFtZTgwOTEyMTkyMjE@._V1_SX300.jpg" alt="The Maze Runner">
+            </div>
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMjUyNTA3MTAyM15BMl5BanBnXkFtZTgwOTEyMTkyMjE@._V1_SX300.jpg" alt="The Maze Runner">
+            </div>
+        </div>
+    </section>
+
+    <script src="/public/js/script.js"></script>
+  </body>
 </html>

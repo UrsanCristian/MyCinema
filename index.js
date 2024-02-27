@@ -21,13 +21,13 @@ const db = new pg.Client({
 
 db.connect();
 
-let moviesTableName = "movies";
-let seriesTableName = "series";
+const defaultType = "movies";
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-let selectedType = moviesTableName;
+let selectedType = defaultType;
 
 let posts;
 
@@ -41,12 +41,10 @@ app.get("/", async (req, res) => {
   res.render("index.ejs", { posts: posts });
 });
 
-app.post("/movies", async (req, res) => {
-    selectedType = moviesTableName;
-});
-
-app.post("/series", async (req, res) => {
-    selectedType = seriesTableName;
+app.post("/type", async (req, res) => {
+    selectedType = req.body.selector;
+    console.log(selectedType);
+    res.redirect("/");
 });
 
 app.listen(port, () => {
