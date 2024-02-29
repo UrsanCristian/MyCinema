@@ -68,57 +68,55 @@
       </section>
 
       <section id="posts">
+        <% posts.forEach(post => { %>
         <div class="post-container">
           <div class="post-heading">
-            <h2 class="name">Movie Name</h2>
+            <h2 class="name"><%= post.title %></h2>
             <div class="btns-div">
               <button class="btn-action">
-                <img class="icon" src="/assets/images/edit.png" alt="Edit">
+                <img
+                  class="icon"
+                  src="/assets/images/edit.png"
+                  alt="Edit Post"
+                />
               </button>
               <button class="btn-action">
-                <img  class="icon" src="/assets/images/delete.png" alt="Delete">
+                <img
+                  class="icon"
+                  src="/assets/images/delete.png"
+                  alt="Delete Post"
+                />
               </button>
             </div>
           </div>
           <div class="post-info">
             <div class="poster">
               <img
-                src="https://m.media-amazon.com/images/M/MV5BMjUyNTA3MTAyM15BMl5BanBnXkFtZTgwOTEyMTkyMjE@._V1_SX300.jpg"
-                alt=""
+                src=<%= post.poster %>
+                alt="<%= post.title %> Poster"
               />
-              <h3 class="score">⭐ My Score: 8/10 ⭐</h3>
+              <h3 class="score">⭐ My Score: <%= post.my_score %>/10 ⭐</h3>
             </div>
             <div class="content">
-              <h4 class="info inline">Release Year: 2020</h4>
-              <h4 class="info inline">Genre: Sci-Fi</h4>
-              <h4 class="info inline">Country: USA</h4>
+              <h4 class="info inline">Release Year: <%= post.release_year %></h4>
+              <h4 class="info inline">Genre: <%= post.genre %></h4>
+              <h4 class="info inline">Country: <%= post.country %></h4>
               <h4 class="info">Directors:</h4>
-              <p class="text">Random Name, Another One, Test Director</p>
+              <p class="text"><%= post.director %></p>
               <h4 class="info">Actors:</h4>
-              <p class="text">Random Actor, Another One, Test Name</p>
+              <p class="text"><%= post.actors %></p>
               <h4 class="info">Description:</h4>
               <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-                earum voluptatum enim cupiditate beatae fugiat fugit temporibus
-                quaerat sint illo assumenda sit fuga vero atque aliquid iste
-                quae reiciendis voluptate necessitatibus, doloribus accusantium
-                eligendi itaque aut possimus! Quae illo voluptates itaque nam
-                perspiciatis quo optio possimus non, cupiditate, architecto
-                velit.
+                <%= post.about %>
               </p>
               <h4 class="info">My Review:</h4>
               <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-                unde excepturi rem laudantium distinctio voluptates eos veniam
-                nesciunt ipsum enim voluptatibus similique maxime, voluptas
-                repudiandae ea minima dolores! Sapiente a maiores omnis
-                voluptates molestias dolor doloremque inventore, accusamus vitae
-                quos id earum, praesentium velit, hic natus saepe amet provident
-                iusto.
+                <%= post.my_review %>
               </p>
             </div>
           </div>
         </div>
+        <% }) %>
       </section>
     </main>
     <script src="/public/js/script.js"></script>

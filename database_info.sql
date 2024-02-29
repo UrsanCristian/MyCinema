@@ -1,36 +1,26 @@
-CREATE TABLE movies (
+CREATE TABLE cinema (
 	id SERIAL PRIMARY KEY,
 	imbd VARCHAR(20),
+	type VARCHAR(30),
     title VARCHAR(100) NOT NULL,
+	poster TEXT,
     release_year INT NOT NULL,
     genre VARCHAR(255) NOT NULL,
+    seasons INT,
     director VARCHAR(100) NOT NULL,
     actors VARCHAR(255),
     about TEXT,
     country VARCHAR(100) NOT NULL,
     my_score DECIMAL(2,1) NOT NULL,
-    my_review TEXT NOT NULL 
+    my_review TEXT NOT NULL
 );
 
-CREATE TABLE series (
-	id SERIAL PRIMARY KEY,
-	imbd VARCHAR(20),
-    title VARCHAR(100) NOT NULL,
-    release_year INT NOT NULL,
-    genre VARCHAR(255) NOT NULL,
-    seasons INT NOT NULL,
-    director VARCHAR(100) NOT NULL,
-    actors VARCHAR(255),
-    about TEXT,
-    country VARCHAR(100) NOT NULL,
-    my_score DECIMAL(2,1) NOT NULL,
-    my_review TEXT NOT NULL 
-);
-
-INSERT INTO movies (imbd, title, release_year, genre, director, actors, about, country, my_score, my_review)
+INSERT INTO cinema (imbd, type, title, poster, release_year, genre, director, actors, about, country, my_score, my_review)
 VALUES (
     'tt1790864',
+	'movie',
     'The Maze Runner',
+	'https://m.media-amazon.com/images/M/MV5BMjUyNTA3MTAyM15BMl5BanBnXkFtZTgwOTEyMTkyMjE@._V1_SX300.jpg',
     2014,
     'Action, Mystery, Sci-Fi',
     'Wes Ball',

@@ -214,6 +214,14 @@ body {
   gap: 1rem;
 }
 
+.info {
+  margin-top: 0.5rem;
+}
+
+.text {
+  font-size: 0.9rem;
+}
+
 .poster > img {
   border-radius: 10px;
   margin-bottom: 1rem;

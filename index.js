@@ -32,13 +32,18 @@ let selectedType = defaultType;
 let posts;
 
 async function getMoviesOrSeries(type) {
-  const dataQuery = await db.query(`SELECT * FROM ${type}`);
+  let dataQuery;
+  if (selectedType==='movies') {
+    dataQuery = await db.query(`SELECT * FROM cinema WHERE type=$1`, ['movie']);
+  } else {
+    dataQuery = await db.query(`SELECT * FROM cinema WHERE type=$1`, ['series']);
+  };
   posts = dataQuery.rows;
 }
 
 app.get("/", async (req, res) => {
   await getMoviesOrSeries(selectedType);
-  res.render("index.ejs", { posts: posts });
+  res.render("index.ejs", { posts: posts, type: selectedType });
 });
 
 app.post("/type", async (req, res) => {
