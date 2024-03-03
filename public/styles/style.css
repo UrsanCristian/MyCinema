@@ -87,16 +87,29 @@ body {
     linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); */
 }
 
+.btn {
+  font-family: "Anta", sans-serif;
+}
+
+input {
+  font-family: "Anta", sans-serif;
+}
+
+textarea {
+  font-family: "Anta", sans-serif;
+  resize: none;
+}
+
 .s-btn:active {
   scale: 0.92;
 }
 
 .s-btn:hover {
-  background: rgb(2, 24, 66);
+  background: #021842;
   background: linear-gradient(
     270deg,
     rgba(2, 29, 78, 0.681) 0%,
-    rgba(109, 160, 211, 0.873) 60%
+    #6da0d3df 60%
   );
   color: rgb(0, 0, 4);
 }
@@ -105,6 +118,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 4rem;
 }
 
 .sub-title {
@@ -153,6 +167,117 @@ body {
   flex: 5;
 }
 
+#hiddenForm {
+  display: none;
+}
+
+#addPost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container {
+  width: 80%;
+  background: linear-gradient(#212121, #212121) padding-box,
+    linear-gradient(120deg, #6da0d3df, #1cb0ff, #021842) border-box;
+  border: 2px solid transparent;
+  margin-top: 1.5rem;
+  padding: 32px 24px;
+  font-size: 0.8rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-sizing: border-box;
+  border-radius: 0.8rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.heading {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.form-input {
+  color: azure;
+  background: transparent;
+  border: 1px solid #535353;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+  height: 2rem;
+  font-size: 0.8rem;
+}
+
+.text-area {
+  height: 7rem;
+}
+
+.submit-btn {
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 10rem;
+  background: #ffffff14;
+  color: azure;
+  border: 2px solid #414141;
+  transition: 0.5s;
+  font-size: 0.8rem;
+}
+
+.submit-btn:hover {
+  background: #212121;
+  border: 2px solid #1cb0ff;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 5px;
+  color: #535353;
+  position: relative;
+}
+
+.form-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+  top: -1rem;
+  left: 0;
+  background: #212121 padding-box;
+  padding: 10px 0 0 0;
+  color: azure;
+
+  font-size: 0.8rem;
+}
+
+.form-group textarea:focus ~ label,
+.form-group textarea:valid ~ label {
+  top: -1rem;
+  left: 0;
+  background: #212121 padding-box;
+  padding: 10px 0 0 0;
+  color: azure;
+
+  font-size: 0.8rem;
+}
+
 #posts {
   display: flex;
   flex-direction: column;
@@ -164,7 +289,7 @@ body {
   flex-direction: column;
   margin-top: 3rem;
   width: 80%;
-  background-color: rgb(64, 64, 64);
+  background-color: #404040;
   color: #f0ffff;
   border-radius: 10px;
   padding: 1rem;

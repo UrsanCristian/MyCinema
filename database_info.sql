@@ -12,21 +12,23 @@ CREATE TABLE cinema (
     about TEXT,
     country VARCHAR(100) NOT NULL,
     my_score DECIMAL(2,1) NOT NULL,
-    my_review TEXT NOT NULL
+    my_review TEXT NOT NULL,
+    favourite BOOLEAN
 );
 
-INSERT INTO cinema (imbd, type, title, poster, release_year, genre, director, actors, about, country, my_score, my_review)
+INSERT INTO cinema (imbd, type, title, poster, release_year, genre, director, actors, about, country, my_score, my_review, favourite)
 VALUES (
-    'tt1790864',
+    'tt1392170',
 	'movie',
-    'The Maze Runner',
-	'https://m.media-amazon.com/images/M/MV5BMjUyNTA3MTAyM15BMl5BanBnXkFtZTgwOTEyMTkyMjE@._V1_SX300.jpg',
-    2014,
+    'The Hunger Games',
+	'https://m.media-amazon.com/images/M/MV5BMjA4NDg3NzYxMF5BMl5BanBnXkFtZTcwNTgyNzkyNw@@._V1_SX300.jpg',
+    2012,
     'Action, Mystery, Sci-Fi',
-    'Wes Ball',
-    'Dylan O Brien, Kaya Scodelario, Will Poulter',
-    'Thomas is deposited in a community of boys after his memory is erased, soon learning they are all trapped in a maze that will require him to join forces with fellow runners for a shot at escape.',
-    'United Kingdom, United States',
-    8.4,
-    'Great Movie'
+    'Gary Ross',
+    'Jennifer Lawrence, Josh Hutcherson, Liam Hemsworth',
+    'Katniss Everdeen voluntarily takes her younger sister`s place in the Hunger Games: a televised competition in which two teenagers from each of the twelve Districts of Panem are chosen at random to fight to the death.',
+    'United States',
+    8.2,
+    'Great Movie',
+    'true'
 );
