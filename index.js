@@ -35,7 +35,7 @@ let favourites;
 async function getMoviesOrSeries(type) {
   let dataQuery;
   let favouritesQuery;
-  if (selectedType==='movies') {
+  if (type==='movies') {
     dataQuery = await db.query(`SELECT * FROM cinema WHERE type=$1`, ['movie']);
     favouritesQuery = await db.query(`SELECT * FROM cinema WHERE type=$1 and favourite=$2`, ['movie','true']);
   } else {
@@ -55,6 +55,35 @@ app.post("/type", async (req, res) => {
     selectedType = req.body.selector;
     console.log(selectedType);
     res.redirect("/");
+});
+
+app.post("/new", async (req, res) => {
+  const addTitle = req.body.title;
+  const addReview = req.body.review;
+  const addScore = req.body.score;
+  let addFav;
+  if (req.body.favourite === 'true') {
+    addFav = req.body.favourite;
+  } else {
+    addFav = 'false';
+  }
+  try {
+    if (addTitle.slice(0, 2) === 'tt' && addTitle.length === 9 ) {
+      const response = await axios.get(`http://www.omdbapi.com/?apikey=${key}&i=${addTitle}`)
+      const data = response.data
+      if (data.Response === 'True') {
+        
+      } else {
+        alert("Wrong Title/IMbd ID. Please introduce the full name/id of the movie and check for misspellings.")
+      } 
+    } else {
+      
+    }
+  } catch (error) {
+    alert("Failed to Get Movie/Series Data. Please try again later.")
+  }
+
+  res.redirect("/")
 });
 
 app.listen(port, () => {
