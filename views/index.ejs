@@ -62,21 +62,27 @@
       </section>
 
       <section id="addPost">
-        <button class="btn showForm-btn" id="showForm">Add New Movie/Series Review</button>
+        <button class="btn showForm-btn" id="showForm">
+          Add New Movie/Series Review
+        </button>
         <div class="form-container" id="hiddenForm">
           <form class="form" action="/new" method="post">
             <span class="heading">New Review</span>
-        
+
             <div class="form-group">
               <input class="form-input" name="title" required="" type="text" />
               <label>Title or IMDb ID</label>
             </div>
-        
+
             <div class="form-group">
-              <textarea class="form-input text-area" name="review" required=""></textarea>
+              <textarea
+                class="form-input text-area"
+                name="review"
+                required=""
+              ></textarea>
               <label>Review</label>
             </div>
-            
+
             <div class="form-group">
               <input class="form-input" name="score" required="" type="text" />
               <label>Score</label>
@@ -85,7 +91,6 @@
             <button class="submit-btn" type="submit">Submit Review</button>
           </form>
         </div>
-        
       </section>
 
       <section id="posts">

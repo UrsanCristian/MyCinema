@@ -106,11 +106,7 @@ textarea {
 
 .s-btn:hover {
   background: #021842;
-  background: linear-gradient(
-    270deg,
-    rgba(2, 29, 78, 0.681) 0%,
-    #6da0d3df 60%
-  );
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, #6da0d3df 60%);
   color: rgb(0, 0, 4);
 }
 
@@ -167,14 +163,37 @@ textarea {
   flex: 5;
 }
 
-#hiddenForm {
-  display: none;
+#showForm {
+  width: 35%;
+  height: 3rem;
+  font-size: 1.3rem;
+  background-color: #ffffff14;
+  color: azure;
+  border: 2px solid #414141;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+#showForm:hover {
+  font-size: 1.4rem;
+  cursor: pointer;
+  background-color: #212121;
+  border: 2px solid #1cb0ff;
+  -webkit-box-shadow: -2px 4px 26px 0px rgba(28, 176, 255, 0.59);
+  -moz-box-shadow: -2px 4px 26px 0px rgba(28, 176, 255, 0.59);
+  box-shadow: -2px 4px 26px 0px rgba(28, 176, 255, 0.59);
 }
 
 #addPost {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#hiddenForm {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .form-container {
@@ -236,6 +255,9 @@ textarea {
   border: 2px solid #1cb0ff;
   font-size: 0.95rem;
   cursor: pointer;
+  -webkit-box-shadow: -2px 4px 26px 0px rgba(28, 176, 255, 0.59);
+  -moz-box-shadow: -2px 4px 26px 0px rgba(28, 176, 255, 0.59);
+  box-shadow: -2px 4px 26px 0px rgba(28, 176, 255, 0.59);
 }
 
 .form-group {
@@ -294,6 +316,10 @@ textarea {
   border-radius: 10px;
   padding: 1rem;
   gap: 1rem;
+  border: 1px solid #1cb0ff;
+  -webkit-box-shadow: -2px 4px 26px 0px rgba(28, 176, 255, 0.59);
+  -moz-box-shadow: -2px 4px 26px 0px rgba(28, 176, 255, 0.59);
+  box-shadow: -2px 4px 26px 0px rgba(28, 176, 255, 0.59);
 }
 
 .post-heading {
