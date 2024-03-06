@@ -80,6 +80,11 @@ async function insertCinemaData(data, addScore, addReview, addFav) {
   }
 }
 
+async function getPost(id) {
+  const postData = await db.query("SELECT * FROM cinema WHERE id=$1", [id]);
+  return postData.rows[0];
+}
+
 app.get("/", async (req, res) => {
   await getMoviesOrSeries(selectedType);
   res.render("index.ejs", {
@@ -125,6 +130,16 @@ app.post("/new", async (req, res) => {
   }
 
   res.redirect("/");
+});
+
+app.get("/edit", async (req, res) => {
+  const postId = req.query.postId;
+  const postData = await getPost(postId);
+  res.render("editpost.ejs", {post: postData})
+});
+
+app.post("/edit", async (req, res) => {
+  
 });
 
 app.listen(port, () => {
