@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anta&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/editpost.css" />
+    <title>MyCinema</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Edit "<%= post.title %>" Details</h1>
+      <div class="line"></div>
+      <div class="post-info">
+        <img src="<%= post.poster %>" alt="<%= post.title %> Poster" />
+
+        <form action="/edit" method="post" class="editForm">
+          <input type="hidden" name="id" value="<%= post.id %>" />
+
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            name="title"
+            autocomplete="off"
+            value="<%= post.title %>"
+            required
+          />
+
+          <label for="genre">Genre:</label>
+          <input
+            type="text"
+            name="genre"
+            autocomplete="off"
+            value="<%= post.genre %>"
+            required
+          />
+
+          <label for="director">Directors:</label>
+          <input
+            type="text"
+            name="director"
+            autocomplete="off"
+            value="<%= post.director %>"
+            required
+          />
+
+          <label for="actors">Actors:</label>
+          <input
+            type="text"
+            name="actors"
+            autocomplete="off"
+            value="<%= post.actors %>"
+            required
+          />
+
+          <label for="about">About:</label>
+          <textarea name="about" autocomplete="off" rows="1" required>
+<%= post.about %></textarea
+          >
+
+          <label for="country">Country:</label>
+          <input
+            type="text"
+            name="country"
+            autocomplete="off"
+            value="<%= post.country %>"
+            required
+          />
+
+          <label for="review">My Review:</label>
+          <textarea name="review" autocomplete="off" rows="4" required>
+<%= post.my_review %></textarea
+          >
+
+          <label for="score">My Score:</label>
+          <input
+            type="text"
+            name="score"
+            autocomplete="off"
+            value="<%= post.my_score %>"
+            required
+          />
+
+          <div class="cb inline">
+            <label class="cb-container">
+              <input type="checkbox" name="favourite" value="true" />
+              <div class="checkmark"></div>
+            </label>
+            <p class="cb-text">Add to Favourites</p>
+          </div>
+
+          <button class="submit-btn" type="submit">Edit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
