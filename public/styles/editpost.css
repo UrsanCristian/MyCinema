@@ -143,8 +143,8 @@ form {
 }
 
 .cb-text {
-  align-self: center;
-  font-size: 0.8rem;
+  align-self: flex-end;
+  font-size: 1rem;
 }
 
 /* Hide the default checkbox */
@@ -216,7 +216,7 @@ form {
 .submit-btn {
   margin-top: 1rem;
   border-radius: 5px;
-  padding: 0.5rem;
+  height: 2rem;
   width: 10rem;
   background: #ffffff14;
   color: azure;
@@ -233,4 +233,8 @@ form {
   -webkit-box-shadow: -2px 4px 26px 0px rgba(28, 176, 255, 0.59);
   -moz-box-shadow: -2px 4px 26px 0px rgba(28, 176, 255, 0.59);
   box-shadow: -2px 4px 26px 0px rgba(28, 176, 255, 0.59);
+}
+
+.error-text {
+  align-self: center;
 }
