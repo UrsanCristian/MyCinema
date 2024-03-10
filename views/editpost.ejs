@@ -22,15 +22,6 @@
         <form action="/edit" method="post" class="editForm">
           <input type="hidden" name="id" value="<%= post.id %>" />
 
-          <label for="title">Title:</label>
-          <input
-            type="text"
-            name="title"
-            autocomplete="off"
-            value="<%= post.title %>"
-            required
-          />
-
           <label for="genre">Genre:</label>
           <input
             type="text"
@@ -91,12 +82,15 @@
               <input type="checkbox" name="favourite" value="true" />
               <div class="checkmark"></div>
             </label>
-            <p class="cb-text">Add to Favourites</p>
+            <p class="cb-text">Add to Favourites/Keep in Favourites</p>
           </div>
 
           <button class="submit-btn" type="submit">Edit</button>
         </form>
       </div>
+      <% if (locals.error) { %>
+        <p class="error-text"> <%= error %> </p>
+      <% } %>
     </div>
   </body>
 </html>
