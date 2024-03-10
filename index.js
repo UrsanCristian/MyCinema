@@ -35,13 +35,13 @@ async function getMoviesOrSeries(type) {
   let dataQuery;
   let favouritesQuery;
   if (type === "movies") {
-    dataQuery = await db.query(`SELECT * FROM cinema WHERE type=$1`, ["movie"]);
+    dataQuery = await db.query(`SELECT * FROM cinema WHERE type=$1 ORDER BY my_score DESC`, ["movie"]);
     favouritesQuery = await db.query(
       `SELECT * FROM cinema WHERE type=$1 and favourite=$2 ORDER BY my_score DESC`,
       ["movie", "true"]
     );
   } else {
-    dataQuery = await db.query(`SELECT * FROM cinema WHERE type=$1`, [
+    dataQuery = await db.query(`SELECT * FROM cinema WHERE type=$1 ORDER BY my_score DESC`, [
       "series",
     ]);
     favouritesQuery = await db.query(
@@ -139,8 +139,41 @@ app.get("/edit", async (req, res) => {
 });
 
 app.post("/edit", async (req, res) => {
-  
+  const postId = req.body.id;
+  const editedGenre = req.body.genre;
+  const editedDirector = req.body.director;
+  const editedActors = req.body.actors;
+  const editedAbout = req.body.about;
+  const editedCountry = req.body.country;
+  const editedReview = req.body.review;
+  const editedScore = req.body.score;
+  let editedFav;
+  if (req.body.favourite === 'true') {
+    editedFav = req.body.favourite;
+  } else {
+    editedFav = 'false';
+  };
+  try {
+    await db.query('UPDATE cinema SET genre=$1, director=$2, actors=$3, about=$4, country=$5, my_review=$6, my_score=$7, favourite=$8 WHERE id=$9',
+    [
+      editedGenre,
+      editedDirector,
+      editedActors,
+      editedAbout,
+      editedCountry,
+      editedReview,
+      editedScore,
+      editedFav,
+      postId
+    ])
+  } catch (error) {
+    console.log("Failed to update database");
+    res.render("editpost.ejs", { error: "Failed to edit post. Please try again later"});
+  };
+  res.redirect("/");
 });
+
+
 
 app.listen(port, () => {
   console.log(`Server Running on Port ${port}`);
