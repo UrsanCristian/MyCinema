@@ -96,7 +96,6 @@ app.get("/", async (req, res) => {
 
 app.post("/type", async (req, res) => {
   selectedType = req.body.selector;
-  console.log(selectedType);
   res.redirect("/");
 });
 
@@ -173,7 +172,11 @@ app.post("/edit", async (req, res) => {
   res.redirect("/");
 });
 
-
+app.post("/delete", async (req, res) => {
+  const postId = req.body.deletePost;
+  await db.query('DELETE FROM cinema WHERE id=$1', [postId]);
+  res.redirect("/");
+});
 
 app.listen(port, () => {
   console.log(`Server Running on Port ${port}`);
