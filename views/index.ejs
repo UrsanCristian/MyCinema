@@ -83,26 +83,33 @@
 
       <section id="posts">
         <% posts.forEach(post => { %>
-        <div class="post-container">
+        <div class="post-container" id="post-<%= post.id %>">
           <div class="post-heading">
             <h2 class="name"><%= post.title %></h2>
-            <div class="btns-div">
-              <button class="btn-action">
+            <form class="btns-div">
+              <a class="btn-action" href="/edit?postId=<%= post.id %>">
                 <img
                   class="icon"
                   src="/assets/images/edit.png"
                   alt="Edit Post"
                 />
-              </button>
-              <button class="btn-action">
+              </a>
+              <button
+                class="btn-action"
+                formaction="/delete"
+                formmethod="post"
+                name="deletePost"
+                value="<%= post.id %>"
+              >
                 <img
                   class="icon"
                   src="/assets/images/delete.png"
                   alt="Delete Post"
                 />
               </button>
-            </div>
+            </form>
           </div>
+          <div class="line"></div>
           <div class="post-info">
             <div class="poster">
               <img src="<%=post.poster %>" alt="<%= post.title %> Poster" />
@@ -128,6 +135,33 @@
         <% }) %>
       </section>
     </main>
+    <footer>
+      <div class="inline-icons">
+        <a class="footer-icon" href="https://ursancristian.github.io/"
+          ><img class="svg" src="/assets/svg/person-fill.svg" alt="Personal Website"
+        /></a>
+        <a class="footer-icon" href="https://github.com/UrsanCristian"
+          ><img class="svg" src="/assets/svg/github.svg" alt="Github"
+        /></a>
+        <a class="footer-icon" href="https://www.linkedin.com/in/cristian-ursan-071b0b289/"
+          ><img class="svg" src="/assets/svg/linkedin.svg" alt="LinkedIn"
+        /></a>
+      </div>
+
+      <p class="copyright">© 2024, Ursan Cristian</p>
+
+      <div class="inline-icons">
+        <a class="footer-icon" href="#posts"
+          ><img class="svg" src="/assets/svg/clipboard2-data-fill.svg" alt="Posts"
+        /></a>
+        <a class="footer-icon" href="#top-list"
+          ><img class="svg" src="/assets/svg/star-fill.svg" alt="Favourites"
+        /></a>
+        <a class="footer-icon" href="#hero"
+          ><img class="svg" src="/assets/svg/chevron-up.svg" alt="Home"
+        /></a>
+      </div>
+    </footer>
     <script src="/js/script.js"></script>
   </body>
 </html>
