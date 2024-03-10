@@ -7,6 +7,7 @@
 html {
   height: 100%;
   background-color: rgb(29, 29, 29);
+  scroll-behavior: smooth;
 }
 
 * {
@@ -458,6 +459,7 @@ textarea {
 
 .text {
   font-size: 0.9rem;
+  color: lightgrey;
 }
 
 .poster > img {
@@ -472,6 +474,39 @@ textarea {
 .content {
   display: flex;
   flex-direction: column;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3rem;
+  height: 5rem;
+  background-color: #121212;
+  border-top: 1px solid #1cb0ff;
+  color: azure;
+}
+
+.inline-icons {
+  display: flex;
+  width: fit-content;
+  gap: 1rem;
+}
+
+.footer-icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+.svg {
+  height: 1.6rem;
+  width: 1.6rem;
+  transition: 0.3s;
+}
+
+.svg:hover {
+  height: 1.8rem;
+  width: 1.8rem;
 }
 
 
