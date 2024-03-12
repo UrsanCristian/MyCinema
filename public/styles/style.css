@@ -314,7 +314,7 @@ textarea {
   font-size: 0.8rem;
 }
 
-/* Hide the default checkbox */
+
 .cb-container input {
   position: absolute;
   opacity: 0;
@@ -331,7 +331,6 @@ textarea {
   user-select: none;
 }
 
-/* Create a custom checkbox */
 .checkmark {
   position: relative;
   top: 0;
@@ -346,25 +345,22 @@ textarea {
 .cb-container input:hover ~ .checkmark {
   border: 2px solid #0974f1;
 }
-/* When the checkbox is checked */
+
 .cb-container input:checked ~ .checkmark {
   box-shadow: 0 0 20px rgba(9, 117, 241, 0.8);
   border: 2px solid #0974f1;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when checked */
 .cb-container input:checked ~ .checkmark:after {
   display: block;
 }
 
-/* Style the checkmark/indicator */
 .cb-container .checkmark:after {
   left: 0.45em;
   top: 0.25em;
@@ -514,6 +510,9 @@ footer {
   #hero {
     background-position: left;
   }
+  #showForm {
+    width: 55%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -546,6 +545,19 @@ footer {
   }
   .s-btn {
     margin-top: 1rem;
+  }
+
+  #showForm {
+    width: 60%;
+    height: 4rem;
+  }
+
+  .post-info {
+    flex-direction: column;
+  }
+
+  .poster {
+    align-self: center;
   }
 }
 
@@ -581,6 +593,10 @@ footer {
   }
   .s-btn {
     margin-top: 1rem;
+  }
+
+  #showForm {
+    width: 80%;
   }
 }
 
